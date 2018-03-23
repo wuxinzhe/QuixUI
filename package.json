@@ -1,0 +1,20 @@
+{
+  "name": "@showings_quix/QuixUI",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wuxinzhe/QuixUI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wuxinzhe/QuixUI/issues"
+  },
+  "homepage": "https://github.com/wuxinzhe/QuixUI#readme"
+}

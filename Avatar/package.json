@@ -1,0 +1,16 @@
+{
+  "name": "@showings_quix/avatar",
+  "version": "1.0.1",
+  "description": "头像 - 快应用组件",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wuxinzhe/ShowingsMinUI/tree/master/packages/sh-modal"
+  },
+  "author": "",
+  "license": "MIT"
+}

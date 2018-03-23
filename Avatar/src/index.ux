@@ -1,0 +1,50 @@
+<template>
+  <div class="avatar avatar-{{size}}">
+    <image src="{{src}}" alt="{{alt}}"></image>
+  </div>
+</template>
+
+<script>
+import { initProps } from '../../util'
+
+export default {
+  props: ['size', 'src', 'alt'],
+  propsDefault: {
+    size: 'sm',
+    alt: 'image'
+  },
+  data: () => ({}),
+  onInit () {
+    initProps(this)
+  }
+}
+</script>
+
+<style>
+  .avatar {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+  }
+
+  .avatar > image {
+    resize-mode: cover
+  }
+
+  .avatar-sm {
+    height: 150px;
+    width: 150px;
+    border-radius: 75px;
+  }
+
+  .avatar-md {
+    height: 250px;
+    width: 250px;
+    border-radius: 125px;
+  }
+
+  .avatar-lg {
+    height: 300px;
+    width: 300px;
+    border-radius: 150px;
+  }
+</style>
