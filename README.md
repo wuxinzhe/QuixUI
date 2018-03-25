@@ -15,7 +15,7 @@ npm install @showings_quix/quix_ui --save
 ```
 
 具体的使用可以参考Quix的Demo项目：  
-- [https://github.com/wuxinzhe/Quix](https://github.com/wuxinzhe/Quix)
+- Quix：[https://github.com/wuxinzhe/Quix](https://github.com/wuxinzhe/Quix)
 
 ## API 文档
 
