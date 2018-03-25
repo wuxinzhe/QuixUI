@@ -1,6 +1,6 @@
 {
   "name": "@showings_quix/avatar",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "头像 - 快应用组件",
   "publishConfig": {
     "access": "public"
@@ -12,5 +12,8 @@
     "url": "https://github.com/wuxinzhe/QuixUI/tree/master/Avatar"
   },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@showings_quix/common": "^1.0.0"
+  }
 }
