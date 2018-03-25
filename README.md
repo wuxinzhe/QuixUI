@@ -19,4 +19,4 @@ npm install @showings_quix/quix_ui --save
 
 ## API 文档
 
-组件文档目前还没来得及做出来，不过大家如果急着用，其实组件并没有写的非常复杂，简单看一下源码就可以理解。当然会在不久的未来，把这部分内容补上，让项目有头有尾。
+- Quix UI Api Document：[quix.flutter-zh.com](https://quix.flutter-zh.com/)（临时）

@@ -31,10 +31,9 @@
 const initProps = require('./../util')
 
 export default {
-  props: ['label', 'first', 'options', 'type','title'],
+  props: ['label', 'first', 'options','title'],
   propsDefault: {
     first: false,
-    type: 'text',
     options: [
       {
         id: -1,
