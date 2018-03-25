@@ -1,0 +1,31 @@
+<template>
+  <div class="flex"
+       style="align-items:{{align}};justify-content:{{justify}};flex-wrap:{{wrap}};flex-direction:{{direction}}">
+    <slot/>
+  </div>
+</template>
+
+<script>
+const initProps = require('./../util')
+
+export default {
+    props: ['justify', 'align', 'wrap', 'direction'],
+    propsDefault: {
+        justify: 'flex-start',
+        align: 'flex-start',
+        wrap: 'nowrap',
+        direction: 'column'
+    },
+    data: () => ({}),
+    onInit () {
+        initProps(this)
+    }
+}
+</script>
+
+<style>
+  .flex {
+    display: flex;
+    width: 100%;
+  }
+</style>

@@ -1,0 +1,87 @@
+<template>
+  <div class="input-field list-field">
+    <div class="list-content" style="border-top-width: {{first?0:1}}px">
+      <text class="list-label input-label" if="{{label}}">
+        {{label}}
+      </text>
+      <input type="{{type}}" class="input-native" placeholder="{{placeholder}}" value="{{inputValue}}"
+             onchange="onInput"/>
+      <slot/>
+      <div class="clear-box" if="{{clearable}}">
+        <div class="input-clear" if="{{clear}}" onclick="onClear">
+          <text>×</text>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+const initProps = require('./../util')
+
+export default {
+  props: ['first', 'label', 'placeholder', 'type', 'value', 'clearable'],
+  propsDefault: {
+    first: false,
+    placeholder: '请输入...',
+    type: 'text',
+    value: '',
+    clearable: false
+  },
+  data: () => ({
+    clear: false,
+    inputValue: ''
+  }),
+  onInit () {
+    initProps(this)
+    this.inputValue = this.value
+  },
+  onInput ({ value }) {
+    this.clear = value !== ''
+    this.inputValue = value
+    this.$dispatch('input', { value: value })
+  },
+  onClear () {
+    this.clear = false
+    this.inputValue = ''
+    this.$dispatch('clear', { value: this.value })
+  }
+}
+</script>
+
+<style>
+  @import "./../Style/common.css";
+
+  .input-field {
+  }
+
+  .input-native {
+    flex: 1;
+    font-size: 30px;
+  }
+
+  .clear-box {
+    height: 40px;
+    width: 40px;
+  }
+
+  .input-clear {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 25px;
+    background-color: #dddddd;
+  }
+
+  .input-clear > text {
+    width: 100%;
+    text-align: center;
+    font-size: 35px;
+    color: #ffffff;
+    margin-top: -5px;
+  }
+
+
+</style>

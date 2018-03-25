@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { initProps } from '../util'
+const initProps = require('./../util')
 
 export default {
   props: ['size', 'src', 'alt'],

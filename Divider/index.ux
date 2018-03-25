@@ -1,0 +1,41 @@
+<template>
+  <stack class="divider">
+    <div class="line"></div>
+    <text class="message" style="background-color:{{bgColor}}">{{text}}</text>
+  </stack>
+</template>
+
+<script>
+const initProps = require('./../util')
+
+export default {
+  props: ['text', 'bgColor'],
+  propsDefault: {
+    text: '已经到底了',
+    bgColor: '#faf7ff'
+  },
+  data: () => ({}),
+  onInit () {
+    initProps(this)
+  }
+}
+</script>
+
+<style>
+  .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .line {
+    width: 60%;
+    height: 2px;
+    background-color: #dddddd;
+  }
+
+  .message{
+    padding: 0 20px;
+  }
+</style>

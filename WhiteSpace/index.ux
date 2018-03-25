@@ -1,0 +1,38 @@
+<template>
+  <div class="white-space" style="height: {{height}}px"></div>
+</template>
+
+<script>
+const initProps = require('./../util')
+
+export default {
+    props: ['size'],
+    propsDefault: {
+        size: 'sm'
+    },
+    data: () => ({
+        height: 40
+    }),
+    onInit () {
+        initProps(this)
+        switch (this.size) {
+            case 'sm':
+                this.height = 30
+                break
+            case 'md':
+                this.height = 50
+                break
+            case 'lg':
+                this.height = 70
+                break
+        }
+    }
+}
+</script>
+
+<style>
+  .white-space {
+    display: flex;
+    width: 100%;
+  }
+</style>

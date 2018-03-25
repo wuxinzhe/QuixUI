@@ -1,0 +1,29 @@
+<template>
+  <div class="container" style="background-color:{{bgColor}}">
+    <slot/>
+  </div>
+</template>
+
+<script>
+const initProps = require('./../util')
+
+export default {
+  props: ['bgColor'],
+  propsDefault: {
+    bgColor: '#faf7ff'
+  },
+  onInit () {
+    initProps(this)
+  }
+}
+</script>
+
+<style>
+  .container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+</style>

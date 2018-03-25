@@ -1,0 +1,35 @@
+.fly-in {
+    animation-name: flyIn;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
+}
+
+.fly-out {
+    animation-name: flyOut;
+    animation-duration: 500ms;
+    animation-timing-function: ease-in;
+}
+
+@keyframes flyIn {
+    from {
+        opacity: 0;
+        transform: translateY(-3000px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(1px);
+    }
+}
+
+@keyframes flyOut {
+    from {
+        opacity: 1;
+        transform: translateY(1px);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-3000px);
+    }
+}

@@ -1,0 +1,47 @@
+<template>
+  <div class="cell list-field" onclick="onClick">
+    <div class="list-content" style="border-top-width: {{first?0:1}}px">
+      <text class="list-label">
+        {{label}}
+      </text>
+      <text class="extra">{{extra}}</text>
+      <text if="{{arrow}}">〉</text>
+    </div>
+  </div>
+</template>
+
+<script>
+const initProps = require('./../util')
+import router from '@system.router'
+
+export default {
+  props: ['extra', 'arrow', 'label', 'first', 'page'],
+  propsDefault: {
+    arrow: false,
+    first: false
+  },
+  data: () => ({}),
+  onInit () {
+    initProps(this)
+  },
+  onClick () {
+    if (this.page) {
+      router.push({ uri: `/${this.page}` })
+    }
+    this.$dispatch('click')
+  }
+}
+</script>
+<style>
+  @import "./../style/common.css";
+
+  .cell {
+
+  }
+
+  .extra {
+    color: #c0c4cc;
+  }
+
+
+</style>

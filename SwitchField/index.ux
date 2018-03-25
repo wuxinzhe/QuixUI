@@ -1,0 +1,40 @@
+<template>
+  <div class="switch-field list-field">
+    <div class="list-content" style="border-top-width: {{first?0:1}}px">
+      <text class="list-label input-label" if="{{label}}">
+        {{label}}
+      </text>
+      <switch checked="{{checked}}" onchange="onChange"></switch>
+    </div>
+  </div>
+</template>
+
+<script>
+const initProps = require('./../util')
+
+export default {
+  props: ['first', 'label', 'value'],
+  propsDefault: {
+    first: false,
+    value: false
+  },
+  data: () => ({
+    checked: false
+  }),
+  onInit () {
+    initProps(this)
+    this.checked = this.value
+  },
+  onChange ({ checked }) {
+    this.checked = checked
+    this.$dispatch('change', { value: checked })
+  }
+}
+</script>
+
+<style>
+  @import "./../Style/common.css";
+
+  .switch-field {
+  }
+</style>

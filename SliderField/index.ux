@@ -1,0 +1,52 @@
+<template>
+  <div class="slider-field list-field">
+    <div class="list-content" style="border-top-width:{{first ? 0 : 1}}px">
+      <text class="list-label input-label" if="{{label}}">
+        {{label}}
+      </text>
+      <slider class="slider-native" min="{{min}}" max="{{max}}" value="{{sliderValue}}" step="{{step}}"
+              onchange="onChange"></slider>
+      <text if="{{showValue}}">{{sliderValue}}</text>
+    </div>
+  </div>
+</template>
+
+<script>
+const initProps = require('./../util')
+
+export default {
+  props: ['label', 'first', 'value', 'min', 'max', 'step', 'showValue'],
+  propsDefault: {
+    first: false,
+    value: 50,
+    min: 0,
+    max: 100,
+    step: 1,
+    showValue: false
+  },
+  data: () => ({
+    sliderValue: 0
+  }),
+  onInit () {
+    initProps(this)
+    this.sliderValue = this.value
+  },
+  onChange ({ progress }) {
+    this.sliderValue = progress
+  }
+}
+</script>
+
+<style>
+  @import "./../Style/common.css";
+
+  .slider-field {
+  }
+
+  .slider-native {
+    flex: 1;
+    height: 100%;
+    selected-color: #409185;
+    color: #dddddd;
+  }
+</style>

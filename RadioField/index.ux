@@ -1,0 +1,72 @@
+<template>
+  <div class="radio-field list-field">
+    <block for="(idx,option) in options">
+      <div class="list-content" style="border-top-width:{{first && idx === 0 ? 0:1}}px" @click="onSelect(option.id)">
+        <div class="list-label">
+          <text>{{option.label}}</text>
+        </div>
+        <div class="selected-box" if="{{selectedValue == option.id}}">
+          <div class="selected-checked">
+            <text>○</text>
+          </div>
+        </div>
+      </div>
+    </block>
+  </div>
+</template>
+
+<script>
+const initProps = require('./../util')
+
+export default {
+  props: ['options', 'first', 'value'],
+  propsDefault: {
+    first: false,
+    options: [{ id: 1, label: '是' }, { id: 2, label: '否' }],
+    value: ''
+  },
+  data: () => ({
+    selectedValue: ''
+  }),
+  onInit () {
+    initProps(this)
+    this.selectedValue = this.value
+  },
+  onSelect (id) {
+    this.selectedValue = id
+    this.$dispatch('change', { value: this.selectedValue })
+  }
+}
+</script>
+
+<style>
+  @import "./../Style/common.css";
+
+  .radio-field {
+    flex-direction: column;
+  }
+
+  .selected-box {
+    height: 40px;
+    width: 40px;
+  }
+
+  .selected-checked {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 25px;
+    background-color: #409185;
+  }
+
+  .selected-checked > text {
+    width: 100%;
+    text-align: center;
+    font-size: 27px;
+    color: #ffffff;
+    font-weight: bold;
+    margin-top: -2px;
+  }
+</style>

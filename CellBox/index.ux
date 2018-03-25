@@ -1,0 +1,45 @@
+<template>
+  <div class="cell-box">
+    <div class="title">
+      <text>{{head}}</text>
+    </div>
+    <div class="content">
+      <slot/>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  props: ['head'],
+  data: () => ({})
+}
+</script>
+
+<style>
+  .cell-box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .title {
+    width: 100%;
+    color: #909399;
+    font-size: 25px;
+    margin: 20px 0 10px 0;
+    padding: 0 20px;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: solid #dddddd;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+  }
+
+</style>

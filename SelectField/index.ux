@@ -1,0 +1,89 @@
+<import name="modal" src="../Modal"></import>
+
+<template>
+  <div class="select-field list-field">
+    <div class="list-content" style="border-top-width: {{first?0:1}}px" onclick="onShowSelect">
+      <text class="list-label input-label">
+        {{label}}
+      </text>
+    </div>
+    <stack if="{{selectVisible}}" class="modal">
+      <div class="backdrop" style="opacity:{{opacity}}"></div>
+      <div class="modal-container {{modalVisible?'fly-in':'fly-out'}}">
+        <div class='modal-title'>
+          <text>{{title}}</text>
+        </div>
+        <div class="modal-body">
+          <text>{{message}}</text>
+        </div>
+        <div class="modal-footer">
+          <div class="footer-btn"
+               style="border-left-width: {{idx === 0 ? 0 : 1}}px;">
+            <text style="color:#909399">{{footer.label}}</text>
+          </div>
+        </div>
+      </div>
+    </stack>
+  </div>
+</template>
+
+<script>
+const initProps = require('./../util')
+
+export default {
+  props: ['label', 'first', 'options', 'type','title'],
+  propsDefault: {
+    first: false,
+    type: 'text',
+    options: [
+      {
+        id: -1,
+        label: '请选择'
+      }
+    ]
+  },
+  data: () => ({
+    content: '',
+    selectVisible: false,
+    opacity: 0
+  }),
+  onInit () {
+    initProps(this)
+  },
+  onShowSelect () {
+    this.selectVisible = true
+    this.modalVisible = true
+    let id = setInterval(() => {
+      this.opacity += 0.05
+      if (this.opacity > 1) {
+        this.opacity = 1
+        clearInterval(id)
+      }
+    }, 16)
+  },
+  onCloseSelect () {
+    let id = setInterval(() => {
+      this.modalVisible = false
+      this.opacity -= 0.05
+      if (this.opacity <= 0) {
+        clearInterval(id)
+        this.opacity = 0
+        this.$dispatch('close')
+      }
+    }, 16)
+  },
+  onChange ({ newValue }) {
+    console.log(newValue)
+  }
+}
+</script>
+
+<style>
+  @import "./../Style/common.css";
+  @import "./../Style/modal.css";
+
+  .select-field {
+  }
+
+
+</style>

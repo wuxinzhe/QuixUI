@@ -1,0 +1,28 @@
+.list-field {
+    display: flex;
+    width: 100%;
+    padding-left: 40px;
+    background-color: #ffffff;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30px;
+    padding-right: 20px;
+    height: 80px;
+    border: solid #dddddd;
+}
+
+.list-label {
+    margin-right: 20px;
+    font-size: 35px;
+}
+
+.input-label {
+    width: 150px;
+}
