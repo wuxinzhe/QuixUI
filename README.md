@@ -20,3 +20,11 @@ npm install @showings_quix/quix_ui --save
 ## API 文档
 
 - Quix UI Api Document：[quix.flutter-zh.com](https://quix.flutter-zh.com/)（临时）
+
+## 项目截图
+![108](http://image.showings.com.cn/6-pre)
+![106](http://image.showings.com.cn/1-pre)
+![103](http://image.showings.com.cn/3-pre)
+![105](http://image.showings.com.cn/4-pre)
+![107](http://image.showings.com.cn/5-pre)
+![109](http://image.showings.com.cn/7-pre)
