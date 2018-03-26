@@ -33,12 +33,13 @@ export default {
   },
   onChange ({ progress }) {
     this.sliderValue = progress
+    this.$dispatch('change', { value: progress })
   }
 }
 </script>
 
 <style>
-  @import "./../Style/common.css";
+  @import "./../style/common.css";
 
   .slider-field {
   }

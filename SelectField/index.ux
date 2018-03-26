@@ -78,8 +78,8 @@ export default {
 </script>
 
 <style>
-  @import "./../Style/common.css";
-  @import "./../Style/modal.css";
+  @import "./../style/common.css";
+  @import "./../style/modal.css";
 
   .select-field {
   }
