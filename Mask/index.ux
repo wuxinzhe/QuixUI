@@ -9,9 +9,8 @@
 const initProps = require('./../util')
 
 export default {
-  props: ['visible', 'color', 'start'],
+  props: ['color', 'start'],
   propsDefault: {
-    visible: true,
     color: '#ffffff',
     start: false
   },
