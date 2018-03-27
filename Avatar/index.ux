@@ -21,9 +21,9 @@ export default {
   }),
   onInit () {
     initProps(this)
-  },
-  onShow () {
-    this.start = true
+    setTimeout(() => {
+      this.start = true
+    }, 500)
   }
 }
 </script>
