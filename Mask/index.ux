@@ -1,0 +1,41 @@
+<template>
+  <stack class="mask">
+    <slot/>
+    <div class="backdrop {{start ?'fade-in':''}}" style="background-color:{{color}}"></div>
+  </stack>
+</template>
+
+<script>
+const initProps = require('./../util')
+
+export default {
+  props: ['visible', 'color', 'start'],
+  propsDefault: {
+    visible: true,
+    color: '#ffffff',
+    start: false
+  },
+  data: () => ({}),
+  onInit () {
+    initProps(this)
+  }
+}
+</script>
+
+<style>
+  @import "../style/animation.css";
+
+  .mask {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .backdrop {
+    height: 1000px;
+    width: 1000px;
+    border-radius: 500px;
+  }
+</style>

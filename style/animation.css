@@ -33,3 +33,29 @@
         transform: translateY(-3000px);
     }
 }
+
+.fade-in {
+    opacity: 0.5;
+    height: 0;
+    width: 0;
+    animation-name: fadeIn;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
+}
+
+.fade-out{
+
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 1;
+        height: 1000px;
+        width: 1000px;
+    }
+    to {
+        opacity: 0.5;
+        height: 0;
+        width: 0;
+    }
+}
