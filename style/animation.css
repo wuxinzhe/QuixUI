@@ -35,7 +35,7 @@
 }
 
 .fade-in {
-    opacity: 0.5;
+    opacity: 0;
     height: 0;
     width: 0;
     animation-name: fadeIn;
@@ -44,7 +44,12 @@
 }
 
 .fade-out{
-
+    opacity: 1;
+    height: 1000px;
+    width: 1000px;
+    animation-name: fadeIn;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
 }
 
 @keyframes fadeIn {
@@ -57,5 +62,18 @@
         opacity: 0.5;
         height: 0;
         width: 0;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 0.5;
+        height: 0;
+        width: 0;
+    }
+    to {
+        opacity: 1;
+        height: 1000px;
+        width: 1000px;
     }
 }

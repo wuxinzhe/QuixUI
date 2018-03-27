@@ -1,9 +1,6 @@
-<import name="mask" src="../Mask"></import>
 <template>
   <div class="avatar avatar-{{size}}">
-    <mask>
-      <image src="{{src}}" alt="{{alt}}"></image>
-    </mask>
+    <image src="{{src}}" alt="{{alt}}"></image>
   </div>
 </template>
 
@@ -16,14 +13,9 @@ export default {
     size: 'sm',
     alt: 'image'
   },
-  data: () => ({
-    start: false
-  }),
+  data: () => ({}),
   onInit () {
     initProps(this)
-    setTimeout(() => {
-      this.start = true
-    }, 500)
   }
 }
 </script>
